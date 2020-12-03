@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<form>
+    <fieldset disabled >
+        <div class="form-group">
+            <%= label_tag nil, @coin.class.human_attribute_name(:description)  %>
+            <%= text_field_tag nil, @coin.description, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+            <%= label_tag nil, @coin.class.human_attribute_name(:acronym) %>
+            <%= text_field_tag nil, @coin.acronym, class: "form-control" %>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-10">
+               <%= label_tag nil, @coin.class.human_attribute_name(:url_image) %> 
+                <%= text_field_tag nil, @coin.url_image, class: "form-control" %>
+            </div>
+            <div class="form-group col-md-2 text-center">
+                <%= image_tag @coin.url_image, height: 80 if @coin.url_image? %>
+            </div>
+        </div>
+        <div class="form-group">
+            <%= label_tag @coin.class.human_attribute_name(:mining_type) %>
+            <%= text_field_tag nil, @coin.mining_type.description, class: "form-control"%>
+        </div>
+    </fieldset>
+</form>
+
+<div class="btn-group text-center" role="group" aria-label="Basic example">
+    <%= link_to 'Edit', edit_coin_path(@coin), class: "btn btn-secondary" %>
+    <%= link_to t('links.back'), coins_path, class: "btn btn-secondary"%>
+</div>
+
+
+<!--
+<p>
+    <strong>Description:</strong>
+    <%= @coin.description %>
+</p>
+
+<p>
+    <strong>Acronym:</strong>
+    <%= @coin.acronym %>
+</p>
+
+<p>
+    <strong>Image:</strong>
+    <%= image_tag @coin.url_image, width: 25 %>
+</p>
+
+<p>
+    <strong>Mining type:</strong>
+    <%= @coin.mining_type.description %>
+</p>
+
+<div class="btn-group text-center" role="group" aria-label="Basic example">
+    <%= link_to 'Edit', edit_coin_path(@coin), class: "btn btn-secondary" %>
+    <%= link_to t('links.back'), coins_path, class: "btn btn-secondary"%>
+</div>
+-->

@@ -1,0 +1,9 @@
+<div class="row">
+    <h1><%= t('new.coin')%></h1>
+</div>
+
+
+<%= render 'form', coin: @coin %>
+
+<%= link_to t('links.back'), coins_path, class: "btn btn-secondary"%>
+
