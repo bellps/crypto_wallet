@@ -17,10 +17,10 @@
         <ul class="nav nav-tabs justify-content-end">
             <%= link_to "Home", root_path, class: "navbar-brand"%>
             <li class="nav-item">
-                <%= link_to "Português", root_path(locale: 'pt-BR'), class: (cookies[:locale] == 'pt-BR' ? "nav-link active" : "nav-link") %>
+                <%= link_to "Português", request.path + '?locale=pt-BR', class: (cookies[:locale] == 'pt-BR' ? "nav-link active" : "nav-link") %>
             </li>
             <li class="nav-item">
-                <%= link_to  "Inglês", root_path(locale: 'en'), class: (cookies[:locale] == 'en' ? "nav-link active" : "nav-link") %>
+                <%= link_to  "Inglês", request.path  + '?locale=en', class: (cookies[:locale] == 'en' ? "nav-link active" : "nav-link") %>
             </li>
         </ul>
         <%= yield %>
